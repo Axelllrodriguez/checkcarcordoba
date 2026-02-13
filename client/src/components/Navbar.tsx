@@ -34,7 +34,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <img src="/images/logo.png" alt="Check Car Córdoba" className="h-10 md:h-12 w-auto invert" />
+          <img src="/images/logo.png" alt="Check Car Córdoba" className="h-10 md:h-12 w-auto" />
         </div>
 
         {/* Desktop Nav */}

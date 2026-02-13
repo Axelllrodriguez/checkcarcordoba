@@ -6,7 +6,7 @@ export default function Footer() {
           
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
-              <img src="/images/logo.png" alt="Check Car Córdoba" className="h-10 w-auto invert opacity-80" />
+              <img src="/images/logo.png" alt="Check Car Córdoba" className="h-10 w-auto opacity-80" />
             </div>
             <p className="text-gray-500 text-sm max-w-xs">
               Servicio profesional de inspección vehicular en Córdoba. Tu seguridad y confianza son nuestro compromiso.
