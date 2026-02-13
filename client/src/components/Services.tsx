@@ -68,9 +68,9 @@ export default function Services() {
 
         {/* Animated Services Carousel - Centered */}
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
             {/* Image Side */}
-            <div className="relative h-[350px] md:h-[450px] w-full">
+            <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-full order-1 lg:order-1">
               <AnimatePresence mode="popLayout">
                 {services.map((service, index) => {
                   const isActive = index === active;
@@ -92,7 +92,7 @@ export default function Services() {
                       className="absolute inset-0 origin-center"
                       style={{ perspective: 1000 }}
                     >
-                      <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl">
+                      <div className="relative h-full w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
                         <img
                           src={service.image}
                           alt={service.title}
@@ -112,7 +112,7 @@ export default function Services() {
             </div>
 
             {/* Content Side */}
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center order-2 lg:order-2 text-center lg:text-left">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -122,25 +122,25 @@ export default function Services() {
                   transition={{ duration: 0.4 }}
                 >
                   {/* Service Number */}
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-4 justify-center lg:justify-start">
                     <span className="text-primary font-bold text-sm uppercase tracking-widest">
                       {String(active + 1).padStart(2, "0")} / {String(services.length).padStart(2, "0")}
                     </span>
-                    <div className="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent" />
+                    <div className="h-[1px] flex-1 max-w-[100px] lg:max-w-none bg-gradient-to-r from-primary/50 to-transparent" />
                   </div>
 
                   {/* Title with Icon */}
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-primary/10 p-3 rounded-lg border border-primary/20">
-                      <Icon className="w-6 h-6 text-primary" />
+                  <div className="flex items-center gap-3 sm:gap-4 mb-4 justify-center lg:justify-start">
+                    <div className="bg-primary/10 p-2 sm:p-3 rounded-lg border border-primary/20">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
-                    <h4 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-wide">
+                    <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-white uppercase tracking-wide">
                       {currentService.title}
                     </h4>
                   </div>
 
                   {/* Description with word animation */}
-                  <motion.p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  <motion.p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 px-2 lg:px-0">
                     {currentService.description.split(" ").map((word, i) => (
                       <motion.span
                         key={i}
@@ -155,29 +155,29 @@ export default function Services() {
                   </motion.p>
 
                   {/* Navigation */}
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4 justify-center lg:justify-start">
                     <button
                       onClick={handlePrev}
-                      className="group p-3 rounded-full border border-white/20 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+                      className="group p-2 sm:p-3 rounded-full border border-white/20 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
                     >
-                      <ChevronLeft className="w-5 h-5 text-white group-hover:text-primary transition-colors" />
+                      <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:text-primary transition-colors" />
                     </button>
                     <button
                       onClick={handleNext}
-                      className="group p-3 rounded-full border border-white/20 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+                      className="group p-2 sm:p-3 rounded-full border border-white/20 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
                     >
-                      <ChevronRight className="w-5 h-5 text-white group-hover:text-primary transition-colors" />
+                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white group-hover:text-primary transition-colors" />
                     </button>
 
                     {/* Progress Dots */}
-                    <div className="flex gap-2 ml-4">
+                    <div className="flex gap-2 ml-2 sm:ml-4">
                       {services.map((_, i) => (
                         <button
                           key={i}
                           onClick={() => { setAutoplay(false); setActive(i); }}
                           className={`w-2 h-2 rounded-full transition-all duration-300 ${
                             i === active 
-                              ? "bg-primary w-6" 
+                              ? "bg-primary w-5 sm:w-6" 
                               : "bg-white/30 hover:bg-white/50"
                           }`}
                         />

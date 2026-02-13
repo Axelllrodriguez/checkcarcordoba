@@ -51,7 +51,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex gap-8">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             <a href="#" className="text-gray-400 hover:text-primary text-sm uppercase tracking-wider">Inicio</a>
             <a href="#services" className="text-gray-400 hover:text-primary text-sm uppercase tracking-wider">Servicios</a>
             <a href="#contact" className="text-gray-400 hover:text-primary text-sm uppercase tracking-wider">Contacto</a>

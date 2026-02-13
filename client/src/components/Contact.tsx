@@ -47,14 +47,15 @@ export default function Contact() {
           </div>
 
           {/* CTA Button */}
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block">
             <Button 
               size="lg" 
-              className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold uppercase tracking-wider h-16 px-10 text-lg gap-3 shadow-lg shadow-[#25D366]/20"
+              className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold uppercase tracking-wider h-14 sm:h-16 px-6 sm:px-10 text-base sm:text-lg gap-2 sm:gap-3 shadow-lg shadow-[#25D366]/20 w-full sm:w-auto"
             >
-              <MessageCircle size={24} />
-              Escribinos por WhatsApp
-              <ArrowRight size={20} />
+              <MessageCircle size={20} className="sm:w-6 sm:h-6" />
+              <span className="hidden sm:inline">Escribinos por WhatsApp</span>
+              <span className="sm:hidden">WhatsApp</span>
+              <ArrowRight size={18} className="sm:w-5 sm:h-5" />
             </Button>
           </a>
 
@@ -63,7 +64,7 @@ export default function Contact() {
           </p>
 
           {/* Social Links */}
-          <div className="flex items-center justify-center gap-8 mt-12 pt-12 border-t border-white/5">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-12 pt-12 border-t border-white/5">
             <a 
               href={whatsappUrl} 
               target="_blank" 

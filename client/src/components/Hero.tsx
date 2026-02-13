@@ -33,19 +33,19 @@ export default function Hero() {
             <span>Empresa líder de peritajes en Córdoba</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none uppercase drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none uppercase drop-shadow-2xl">
             Comprá tu Auto <br/>
             <span className="text-primary text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Sin Miedo</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md px-2">
             Revisamos el vehículo antes que lo pagues. Detectamos fallas ocultas, errores electrónicos, estado mecánico, kilometraje real y posibles gastos imprevistos. <b>No pagues de más.</b>
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-6 sm:pt-8 px-4">
             <Button 
               size="lg" 
-              className="bg-primary text-black hover:bg-primary/90 hover:scale-105 transition-all duration-300 font-bold uppercase tracking-wider min-w-[200px] h-14 text-lg shadow-[0_0_20px_rgba(232,230,19,0.4)]"
+              className="bg-primary text-black hover:bg-primary/90 hover:scale-105 transition-all duration-300 font-bold uppercase tracking-wider w-full sm:w-auto sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg shadow-[0_0_20px_rgba(232,230,19,0.4)]"
               onClick={() => window.open("https://wa.me/543513079334?text=Hola%20Check%20Car!%20Me%20interesa%20una%20revisi%C3%B3n%20pre%20compra%20para%20mi%20auto.%20%C2%BFPueden%20darme%20m%C3%A1s%20info%3F", "_blank")}
             >
               Reservar turno por WhatsApp
@@ -53,7 +53,7 @@ export default function Hero() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="bg-white/5 backdrop-blur-sm border-white/20 text-white hover:bg-white/10 hover:border-white font-medium uppercase tracking-wider min-w-[200px] h-14 text-lg"
+              className="bg-white/5 backdrop-blur-sm border-white/20 text-white hover:bg-white/10 hover:border-white font-medium uppercase tracking-wider w-full sm:w-auto sm:min-w-[200px] h-12 sm:h-14 text-sm sm:text-lg"
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Ver Servicios
