@@ -1,0 +1,302 @@
+Perfecto. Con toda la información que me diste, voy a generarte la mega-prompt lista para copiar y pegar en Lovable, adaptada 100% a tu emprendimiento Check Car Córdoba, con branding negro y amarillo, estructura optimizada para conversión y todos los CTA dirigidos a WhatsApp.
+
+🚀 MEGA-PROMPT PARA LOVABLE
+
+Crea un sitio web completo para Check Car Córdoba que se especializa en peritajes de precompra de autos usados en la provincia y ciudad de Córdoba, Argentina. El sitio debe tener una estructura moderna, profesional y altamente persuasiva, enfocado en conversión directa a WhatsApp. Debe construirse usando React con componentes funcionales y hooks, junto con Tailwind CSS para el styling, con enfoque en accesibilidad, estructura modular, performance y responsividad total.
+
+📌 Descripción del Negocio:
+
+Check Car Córdoba ofrece inspecciones mecánicas y estéticas completas de vehículos usados antes de su compra. El servicio está orientado a personas que no tienen conocimientos de mecánica y quieren evitar estafas, fallas ocultas o gastos imprevistos al comprar un auto usado.
+
+El servicio incluye:
+
+Escaneo electrónico con scanner profesional
+
+Diagnóstico de motor y caja
+
+Revisión de chasis y estructura
+
+Inspección de pintura y detección de repintados
+
+Revisión de interior
+
+Evaluación de neumáticos y frenos
+
+Detección de posibles gastos ocultos
+
+Informe detallado del estado general del vehículo
+
+El objetivo principal del sitio es generar confianza y lograr que el visitante haga clic en WhatsApp para contratar el servicio.
+
+🚘 Tipo de Negocio:
+
+Servicios Profesionales – Inspección Automotriz / Peritaje Mecánico
+
+🎨 Paleta de Colores (Branding Oficial):
+
+Color Primario: Amarillo intenso #FFC300
+
+Color Secundario: Negro profundo #000000
+
+Texto Principal: #FFFFFF
+
+Texto Secundario: #D1D5DB
+
+Fondo Claro: #111111
+
+Fondo de Tarjetas: #1A1A1A
+
+Hover CTA: #FFD60A
+
+Estrellas Testimonios: #FFC300
+
+Estética moderna, fuerte, automotriz, estilo taller premium / inspección profesional.
+
+🏗 ESTRUCTURA COMPLETA DEL SITIO
+🔝 Header / Navbar
+
+Layout:
+
+Izquierda: Botones navegación → "Inicio" y "Servicios"
+
+Centro: Logo / Texto “Check Car Córdoba”
+
+Derecha: Botón CTA amarillo → "Solicitar Revisión"
+
+Características:
+
+Navbar fija (sticky)
+
+Fondo negro con ligera transparencia
+
+Efecto blur al hacer scroll
+
+CTA con hover animado
+
+Todos los botones CTA redirigen a WhatsApp
+
+🎥 Sección Hero (Impacto Principal)
+
+Background: Video autoplay en loop (revisión mecánica, scanner automotriz, inspección de auto)
+
+Overlay negro con opacidad para contraste
+
+Texto centrado
+
+Contenido:
+
+Título impactante:
+"Comprá tu Auto Usado Sin Miedo"
+
+Subtítulo:
+Revisamos el vehículo antes que lo pagues. Detectamos fallas ocultas, errores electrónicos y posibles gastos imprevistos.
+
+Botones:
+
+"Ver Servicios" (scroll interno)
+
+"Hablar por WhatsApp" (CTA principal amarillo)
+
+Animaciones suaves en entrada (fade + slide).
+
+🔧 Sección Servicios
+
+Título:
+"Nuestros Peritajes de Precompra"
+
+Subtítulo:
+Inspección completa para que tomes una decisión segura.
+
+Mostrar 3 o 4 tarjetas con íconos automotrices:
+
+Servicio 1 – Revisión Mecánica Completa
+
+Diagnóstico de motor
+
+Caja de cambios
+
+Sistema de frenos
+
+Suspensión
+
+Servicio 2 – Escaneo Electrónico
+
+Scanner profesional
+
+Detección de códigos de error
+
+Fallas ocultas
+
+Servicio 3 – Inspección de Chapa y Pintura
+
+Detección de repintados
+
+Choques estructurales
+
+Estado del chasis
+
+Servicio 4 – Informe Final Profesional
+
+Evaluación general
+
+Estimación de gastos futuros
+
+Recomendación de compra o no
+
+Cada tarjeta:
+
+Fondo oscuro
+
+Ícono amarillo
+
+Hover con elevación
+
+Botón pequeño "Solicitar Revisión"
+
+⭐ Sección ¿Por Qué Elegirnos?
+
+Título:
+"Tu Seguridad es Nuestra Prioridad"
+
+4 ventajas en grid:
+
+✔ Evitás estafas
+
+✔ Ahorrás miles en reparaciones ocultas
+
+✔ Informe claro y profesional
+
+✔ Atención rápida en Córdoba
+
+Sección con fondo negro intenso y detalles amarillos.
+
+🌟 Sección Testimonios
+
+Título:
+"Clientes que Compraron con Confianza"
+
+3 tarjetas de testimonios falsos (editable luego):
+
+Cada tarjeta incluye:
+
+Foto (Unsplash relacionada a cliente feliz con auto)
+
+Nombre ficticio
+
+5 estrellas amarillas
+
+Texto del testimonio
+
+Posibilidad de video testimonial (placeholder)
+
+Ejemplo:
+
+★★★★★
+"Gracias a Check Car Córdoba evité comprar un auto con problemas graves de motor. Súper profesional y claro."
+
+Hover con efecto suave.
+
+📲 Sección Contacto
+
+Título:
+"Coordiná tu Revisión Hoy"
+
+Elementos:
+
+Botón grande WhatsApp
+
+Íconos con links a:
+
+Instagram
+
+TikTok
+
+Formulario de contacto con:
+
+Nombre
+
+Teléfono
+
+Modelo del auto
+
+Mensaje
+
+Botón enviar amarillo.
+
+Implementar validación básica con React hooks.
+
+🔻 Footer
+
+Contenido:
+
+Logo Check Car Córdoba
+
+Texto breve descriptivo
+
+Links rápidos (Inicio, Servicios)
+
+WhatsApp clickable
+
+Instagram
+
+TikTok
+
+Copyright
+
+Fondo negro absoluto.
+
+⚙ Funcionalidades Técnicas
+
+React con componentes funcionales
+
+useState para formulario
+
+useEffect si es necesario
+
+Scroll suave entre secciones
+
+Lazy loading en imágenes
+
+Optimización SEO básica
+
+Schema markup Local Business
+
+Navegación accesible por teclado
+
+Mobile first
+
+Responsive total
+
+Video optimizado para performance
+
+Botón flotante de WhatsApp fijo en esquina inferior derecha
+
+🖼 Imágenes
+
+Usar imágenes relacionadas con:
+
+Inspección mecánica
+
+Scanner automotriz
+
+Taller profesional
+
+Autos usados
+
+Desde Unsplash o similar.
+
+🎯 Objetivo Principal
+
+Maximizar clics en WhatsApp y generar confianza inmediata en personas que están por comprar un auto usado en Córdoba.
+
+El diseño debe transmitir:
+
+Profesionalismo
+
+Seguridad
+
+Autoridad técnica
+
+Confianza
+
+Seriedad
