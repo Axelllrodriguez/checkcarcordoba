@@ -5,16 +5,17 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay and Ken Burns Effect */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.img 
-          src="/images/hero-bg.jpg" 
-          alt="Mecánico inspeccionando auto" 
+      {/* Background Video with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
           className="w-full h-full object-cover"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.1 }}
-          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-        />
+        >
+          <source src="/images/hero-video.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-black/70 bg-gradient-to-t from-background via-black/50 to-black/30" />
       </div>
 
