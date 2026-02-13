@@ -4,7 +4,7 @@ const benefits = [
   {
     icon: ShieldCheck,
     title: "Evitás Estafas",
-    description: "Detectamos vicios ocultos y manipulaciones que no se ven a simple vista."
+    description: "Detectamos fallas ocultas y manipulaciones que no se ven a simple vista."
   },
   {
     icon: PiggyBank,
@@ -19,7 +19,7 @@ const benefits = [
   {
     icon: MapPin,
     title: "En Todo Córdoba",
-    description: "Servicio rápido y ágil en Córdoba Capital y alrededores."
+    description: "Servicio rápido y ágil en Córdoba Capital y toda la provincia."
   }
 ];
 

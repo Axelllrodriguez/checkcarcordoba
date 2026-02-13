@@ -14,7 +14,8 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/images/hero-video.mp4" type="video/mp4" />
+          <source src="/assets/herosection.mp4" type="video/mp4" />
+          <source src="/assets/herosection.mov" type="video/quicktime" />
         </video>
         <div className="absolute inset-0 bg-black/70 bg-gradient-to-t from-background via-black/50 to-black/30" />
       </div>
@@ -29,25 +30,25 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-1.5 text-primary text-sm font-bold tracking-wide uppercase mb-4 backdrop-blur-sm">
             <CheckCircle2 size={16} />
-            <span>Líderes en Peritajes en Córdoba</span>
+            <span>Empresa líder de peritajes en Córdoba</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none uppercase drop-shadow-2xl">
             Comprá tu Auto <br/>
-            <span className="text-primary text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-200">Sin Miedo</span>
+            <span className="text-primary text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/70">Sin Miedo</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-            Revisamos el vehículo antes que lo pagues. Detectamos fallas ocultas, errores electrónicos y posibles gastos imprevistos.
+            Revisamos el vehículo antes que lo pagues. Detectamos fallas ocultas, errores electrónicos, estado mecánico, kilometraje real y posibles gastos imprevistos. <b>No pagues de más.</b>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <Button 
               size="lg" 
-              className="bg-primary text-black hover:bg-primary/90 hover:scale-105 transition-all duration-300 font-bold uppercase tracking-wider min-w-[200px] h-14 text-lg shadow-[0_0_20px_rgba(255,195,0,0.4)]"
-              onClick={() => window.open("https://wa.me/5493510000000", "_blank")}
+              className="bg-primary text-black hover:bg-primary/90 hover:scale-105 transition-all duration-300 font-bold uppercase tracking-wider min-w-[200px] h-14 text-lg shadow-[0_0_20px_rgba(232,230,19,0.4)]"
+              onClick={() => window.open("https://wa.me/543513079334?text=Hola%20Check%20Car!%20Me%20interesa%20una%20revisi%C3%B3n%20pre%20compra%20para%20mi%20auto.%20%C2%BFPueden%20darme%20m%C3%A1s%20info%3F", "_blank")}
             >
-              Hablar por WhatsApp
+              Reservar turno por WhatsApp
             </Button>
             <Button 
               size="lg" 
@@ -63,14 +64,14 @@ export default function Hero() {
 
       {/* Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
+        className="absolute bottom-2 left-1/2 -translate-x-1/2 text-white/60"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
+        animate={{ opacity: 1, y: [0, 12, 0] }}
         transition={{ delay: 1, duration: 2, repeat: Infinity }}
       >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-[10px] uppercase tracking-[0.2em]">Scrolleá</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-primary/0 via-primary to-primary/0"></div>
+        <div className="flex flex-col items-center gap-3">
+          <span className="text-sm uppercase tracking-[0.25em]">Scrolleá</span>
+          <div className="w-[2px] h-16 bg-gradient-to-b from-primary/0 via-primary to-primary/0"></div>
         </div>
       </motion.div>
     </section>

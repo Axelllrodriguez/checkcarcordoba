@@ -36,20 +36,20 @@
 
 :root {
   /* Check Car Córdoba Theme - Dark Mode Default */
-  /* Primary Yellow: #FFC300 -> HSL: 45 100% 50% */
-  /* Background: #111111 -> HSL: 0 0% 7% */
-  /* Card: #1A1A1A -> HSL: 0 0% 10% */
+  /* Primary Yellow: #E8E613 -> HSL: 59 85% 49% */
+  /* Background: #000000 -> HSL: 0 0% 0% */
+  /* Card: #111111 -> HSL: 0 0% 7% */
 
-  --background: 0 0% 7%; /* #111111 */
+  --background: 0 0% 0%; /* #000000 */
   --foreground: 0 0% 100%; /* #FFFFFF */
 
-  --card: 0 0% 10%; /* #1A1A1A */
+  --card: 0 0% 7%; /* #111111 */
   --card-foreground: 0 0% 100%;
 
   --popover: 0 0% 10%;
   --popover-foreground: 0 0% 100%;
 
-  --primary: 45 100% 50%; /* #FFC300 */
+  --primary: 59 85% 49%; /* #E8E613 */
   --primary-foreground: 0 0% 0%; /* Black text on yellow */
 
   --secondary: 0 0% 15%;
@@ -59,14 +59,14 @@
   --muted-foreground: 0 0% 65%; /* #D1D5DB approx */
 
   --accent: 0 0% 15%;
-  --accent-foreground: 45 100% 50%;
+  --accent-foreground: 59 85% 49%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
 
   --border: 0 0% 20%;
   --input: 0 0% 20%;
-  --ring: 45 100% 50%;
+  --ring: 59 85% 49%;
 
   --radius: 0.5rem;
 }
@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #FFC300, #FFD60A);
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.7));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

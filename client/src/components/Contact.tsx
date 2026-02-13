@@ -1,148 +1,97 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, Instagram, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
 
-const formSchema = z.object({
-  name: z.string().min(2, "El nombre debe tener al menos 2 caracteres."),
-  phone: z.string().min(10, "Ingresá un número de teléfono válido."),
-  carModel: z.string().min(2, "Por favor indicá el modelo del auto."),
-  message: z.string().optional(),
-});
+const TikTokIcon = ({ size = 20, className = "" }: { size?: number; className?: string }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    className={className}
+  >
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+  </svg>
+);
+
+const WHATSAPP_NUMBER = "543513079334";
+const WHATSAPP_MESSAGE = "Hola Check Car! Me interesa una revisión pre compra para mi auto. ¿Pueden darme más info?";
+
+const benefits = [
+  "Revisión completa en menos de 2 horas",
+  "Vamos donde esté el auto",
+  "Informe detallado en el momento",
+  "Más de 500 autos revisados"
+];
 
 export default function Contact() {
-  const { toast } = useToast();
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      phone: "",
-      carModel: "",
-      message: "",
-    },
-  });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Construct WhatsApp message
-    const message = `Hola Check Car! Me interesa una revisión.%0A%0A*Nombre:* ${values.name}%0A*Teléfono:* ${values.phone}%0A*Auto:* ${values.carModel}%0A*Mensaje:* ${values.message || "Sin mensaje adicional"}`;
-    
-    window.open(`https://wa.me/5493510000000?text=${message}`, '_blank');
-    
-    toast({
-      title: "¡Listo!",
-      description: "Te estamos redirigiendo a WhatsApp para coordinar.",
-    });
-  }
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
     <section id="contact" className="py-24 bg-[#0a0a0a] border-t border-white/5">
       <div className="container px-4 md:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
-          {/* Contact Info */}
-          <div>
-            <h2 className="text-primary font-bold tracking-widest uppercase mb-2">Contacto</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-8 uppercase">Coordiná tu Revisión Hoy</h3>
-            <p className="text-gray-400 text-lg mb-12">
-              No arriesgues tu capital. Contactanos ahora y asegurate de que el auto que vas a comprar está en condiciones.
-            </p>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-primary font-bold tracking-widest uppercase mb-2">Contacto</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 uppercase">¿Listo para comprar tranquilo?</h3>
+          <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+            No arriesgues tu capital. Escribinos por WhatsApp y coordinamos la revisión del auto que querés comprar.
+          </p>
 
-            <div className="space-y-6">
-              <a href="https://wa.me/5493510000000" target="_blank" className="flex items-center gap-4 text-white hover:text-primary transition-colors group">
-                <div className="bg-card p-4 rounded-full border border-white/10 group-hover:border-primary/50 transition-colors">
-                  <MessageCircle size={24} className="text-primary" />
-                </div>
-                <div>
-                  <p className="font-bold uppercase text-sm text-gray-500">WhatsApp</p>
-                  <p className="text-xl">+54 9 351 000 0000</p>
-                </div>
-              </a>
-              
-              <div className="flex items-center gap-4 text-white hover:text-primary transition-colors group">
-                <div className="bg-card p-4 rounded-full border border-white/10 group-hover:border-primary/50 transition-colors">
-                  <Instagram size={24} className="text-primary" />
-                </div>
-                <div>
-                  <p className="font-bold uppercase text-sm text-gray-500">Instagram</p>
-                  <p className="text-xl">@checkcar.cba</p>
-                </div>
+          {/* Benefits */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-xl mx-auto">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center gap-3 text-left">
+                <CheckCircle className="text-primary shrink-0" size={20} />
+                <span className="text-gray-300">{benefit}</span>
               </div>
-            </div>
+            ))}
           </div>
 
-          {/* Form */}
-          <div className="bg-card border border-white/5 p-8 rounded-2xl shadow-2xl">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white uppercase text-xs font-bold tracking-wider">Nombre Completo</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Tu nombre" {...field} className="bg-background border-white/10 text-white h-12" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-white uppercase text-xs font-bold tracking-wider">Teléfono</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Tu celular" {...field} className="bg-background border-white/10 text-white h-12" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="carModel"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-white uppercase text-xs font-bold tracking-wider">Auto a Revisar</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Modelo y Año" {...field} className="bg-background border-white/10 text-white h-12" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
+          {/* CTA Button */}
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            <Button 
+              size="lg" 
+              className="bg-[#25D366] hover:bg-[#128C7E] text-white font-bold uppercase tracking-wider h-16 px-10 text-lg gap-3 shadow-lg shadow-[#25D366]/20"
+            >
+              <MessageCircle size={24} />
+              Escribinos por WhatsApp
+              <ArrowRight size={20} />
+            </Button>
+          </a>
 
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white uppercase text-xs font-bold tracking-wider">Mensaje (Opcional)</FormLabel>
-                      <FormControl>
-                        <Textarea placeholder="¿Alguna duda específica?" {...field} className="bg-background border-white/10 text-white min-h-[100px]" />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+          <p className="text-gray-500 mt-6 text-sm">
+            Respondemos en menos de 1 hora
+          </p>
 
-                <Button type="submit" className="w-full bg-primary text-black hover:bg-primary/90 font-bold uppercase tracking-wider h-14 text-lg">
-                  Enviar Consulta
-                </Button>
-              </form>
-            </Form>
+          {/* Social Links */}
+          <div className="flex items-center justify-center gap-8 mt-12 pt-12 border-t border-white/5">
+            <a 
+              href={whatsappUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors"
+            >
+              <MessageCircle size={20} />
+              <span>+54 351 307-9334</span>
+            </a>
+            <a 
+              href="https://instagram.com/checkcar.cba" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors"
+            >
+              <Instagram size={20} />
+              <span>@checkcar.cba</span>
+            </a>
+            <a 
+              href="https://tiktok.com/@checkcar.cba" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-gray-400 hover:text-primary transition-colors"
+            >
+              <TikTokIcon size={20} />
+              <span>@checkcar.cba</span>
+            </a>
           </div>
-
         </div>
       </div>
     </section>

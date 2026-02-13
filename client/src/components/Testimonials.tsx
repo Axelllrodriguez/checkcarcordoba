@@ -1,23 +1,19 @@
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const testimonials = [
   {
-    name: "Martín Gómez",
-    image: "/images/testimonial_1.jpg",
+    name: "Martín G.",
     text: "Gracias a Check Car Córdoba evité comprar un auto con problemas graves de motor que estaban ocultos. Súper profesionales y claros con el informe.",
     rating: 5
   },
   {
-    name: "Laura Fernández",
-    image: "/images/testimonial_2.jpg",
+    name: "Laura F.",
     text: "Excelente servicio. Llegaron puntuales, revisaron todo con mucho detalle y me explicaron cada punto. Compré mi auto con total seguridad.",
     rating: 5
   },
   {
-    name: "Pablo Rodríguez",
-    image: "/images/testimonial_3.jpg",
+    name: "Pablo R.",
     text: "Me salvaron de una estafa. El auto marcaba 80.000km pero el scanner detectó que tenía más de 150.000km. Vale cada centavo la revisión.",
     rating: 5
   }
@@ -36,10 +32,9 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="bg-card border-white/5 hover:border-primary/30 transition-colors">
               <CardContent className="p-8 flex flex-col items-center text-center">
-                <Avatar className="w-20 h-20 mb-6 border-2 border-primary">
-                  <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                  <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
-                </Avatar>
+                <div className="w-12 h-12 mb-6 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <Quote className="w-5 h-5 text-primary" />
+                </div>
                 
                 <div className="flex gap-1 mb-4 text-primary">
                   {[...Array(testimonial.rating)].map((_, i) => (
